@@ -1,0 +1,16 @@
+{
+  "name": "NextRevBowlingChallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "logic.js",
+  "dependencies": {
+    "jest": "^23.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
