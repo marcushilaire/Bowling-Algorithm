@@ -11,12 +11,28 @@ let input = {
 };
 
 test("Is the score properly tallied per game", () => {
-  expect(logic.tallyScore(input.strikes)).toBe(300);
-  expect(logic.tallyScore(input.spares)).toBe(150);
-  expect(logic.tallyScore(input.openGame)).toBe(90);
-  expect(logic.tallyScore(input.endSpare)).toBe(96);
-  expect(logic.tallyScore(input.midSpare)).toBe(73);
-  expect(logic.tallyScore(input.multiSpare)).toBe(118);
-  expect(logic.tallyScore(input.multiStrike)).toBe(141);
-  expect(logic.tallyScore(input.endStrikes)).toBe(146);
+  expect(logic.tallyScore(input.strikes)).toEqual(
+    `The final score for the frames: ${input.strikes} is 300`
+  );
+  expect(logic.tallyScore(input.spares)).toEqual(
+    `The final score for the frames: ${input.spares} is 150`
+  );
+  expect(logic.tallyScore(input.openGame)).toEqual(
+    `The final score for the frames: ${input.openGame} is 90`
+  );
+  expect(logic.tallyScore(input.endSpare)).toEqual(
+    `The final score for the frames: ${input.endSpare} is 96`
+  );
+  expect(logic.tallyScore(input.midSpare)).toEqual(
+    `The final score for the frames: ${input.midSpare} is 73`
+  );
+  expect(logic.tallyScore(input.multiSpare)).toEqual(
+    `The final score for the frames: ${input.multiSpare} is 118`
+  );
+  expect(logic.tallyScore(input.multiStrike)).toEqual(
+    `The final score for the frames: ${input.multiStrike} is 141`
+  );
+  expect(logic.tallyScore(input.endStrikes)).toEqual(
+    `The final score for the frames: ${input.endStrikes} is 146`
+  );
 });
