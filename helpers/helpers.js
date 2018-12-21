@@ -8,6 +8,15 @@ const assignValue = x => {
       return parseInt(x);
   }
 };
+
+const initializeFrame = x => {
+  if (x.length > 1) {
+    return Array.from(x);
+  }
+  return x;
+};
+
 module.exports = {
-  assignValue
+  assignValue,
+  initializeFrame
 };
