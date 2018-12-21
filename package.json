@@ -1,7 +1,7 @@
 {
   "name": "NextRevBowlingChallenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "A lightweight node app that calculates bowling scores from an input string",
   "main": "logic.js",
   "dependencies": {
     "jest": "^23.6.0"
@@ -11,6 +11,6 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Marcus Hilaire",
   "license": "ISC"
 }
