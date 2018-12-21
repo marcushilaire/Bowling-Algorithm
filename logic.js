@@ -10,7 +10,6 @@ let input = {
   randomStrikes: "x-x-9/-43-53-72-x-72-72-5/-7" //141
 };
 
-//handle Input.txt***
 const callback = (err, data) => {
   if (err) throw err;
   let userInput = data.replace(/\r/g, "").split("\n"); // rename this variable
@@ -19,13 +18,9 @@ const callback = (err, data) => {
   });
 };
 fs.readFile("./data/input.txt", "utf8", callback);
-// ***
 
 const tallyScore = inputArr => {
   // takes in an array of frames
-  let score = 0;
-
   let frameByThrow = inputArr.map(helpers.initializeFrame); // splits frames into two throws
-  // console.log(frameByThrow);
   return frameByThrow.reduce(helpers.reducer, 0);
 }; //returns total score at the end of game

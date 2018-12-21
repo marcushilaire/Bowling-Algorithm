@@ -14,9 +14,8 @@ const reducer = (score, element, index, array) => {
 const assignValue = x => {
   if (x === "x") {
     return 10;
-  } else {
-    return parseInt(x);
   }
+  return parseInt(x);
 };
 
 const handleStrike = (i, parentArr) => {
