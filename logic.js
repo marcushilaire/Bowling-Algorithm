@@ -1,19 +1,30 @@
 const fs = require("fs");
 const helpers = require("./helpers/helpers.js");
-
+let userOptions = process.argv.splice(2);
 const handleTextInput = (err, data) => {
   if (err) throw err;
-  let inputFromText = data.replace(/\r/g, "").split("\n"); // rename this variable
-  inputFromText.forEach(element => {
-    // console.log(tallyScore(element.split("-"))); // this calls the main function on each game in input.txt
+  let inputFromFile = data.replace(/\r/g, "").split("\n");
+  inputFromFile.forEach(element => {
+    console.log(tallyScore(element)); // this calls the main function on each game in input.txt
   });
 };
-fs.readFile("./data/input.txt", "utf8", handleTextInput);
 
 const tallyScore = inputString => {
-  // let frameByThrow = inputArr.map(helpers.initializeFrame); // splits frames into two throws
   let frameArray = inputString.split("-");
-  return frameArray.reduce(helpers.reducer, 0);
-  return frameByThrow.reduce(helpers.reducer, 0);
+  let finalScore = frameArray.reduce(helpers.reducer, 0);
+  return `The final score for the frames: ${inputString} is ${finalScore}`;
 }; //returns total score at the end of game
+
+const main = optionsArr => {
+  switch (optionsArr[0].toLowerCase()) {
+    case "single":
+      console.log(` running the single test`);
+      console.log(tallyScore(optionsArr[1]));
+      break;
+    case "multiple":
+      fs.readFile("./data/input.txt", "utf8", handleTextInput);
+      break;
+  }
+};
+main(userOptions);
 module.exports = { tallyScore };
